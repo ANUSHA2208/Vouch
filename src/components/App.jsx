@@ -72,21 +72,143 @@ const data = [
     name: 'Infosys',
     Email: 'management@infosys.com',
     Phone: '+91 9563214587',
-    tags: ['nice', 'developer'],
+    cp: 'Vijayent Roy',
+    facilitator:'--',
+    sites:'12',
+    Tenants:'--',
+    tg:'--'
   },
   {
     key: '2',
     name: 'Wipro',
     Email: 'management@wipro.com',
-    address: 'London No. 1 Lake Park',
-    tags: ['loser'],
+    Phone: '+91 9834687423 ',
+    cp: 'Kalpit Soni',
+    facilitator:'--',
+    sites:'8',
+    Tenants:'--',
+    tg:'--'
   },
   {
     key: '3',
     name: 'Accenture',
     Email: 'management@accenture.com',
-    address: 'Sidney No. 1 Lake Park',
-    tags: ['cool', 'teacher'],
+    Phone: '+91 8732654789',
+    cp: 'Drishti Sane',
+    facilitator:'--',
+    sites:'4',
+    Tenants:'--',
+    tg:'--'
+  },
+  {
+    key: '4',
+    name: 'Accenture',
+    Email: 'management@accenture.com',
+    Phone: '+91 8732654789',
+    cp: 'Drishti Sane',
+    facilitator:'--',
+    sites:'4',
+    Tenants:'--',
+    tg:'--'
+  },
+  {
+    key: '5',
+    name: 'Accenture',
+    Email: 'management@accenture.com',
+    Phone: '+91 8732654789',
+    cp: 'Drishti Sane',
+    facilitator:'--',
+    sites:'4',
+    Tenants:'--',
+    tg:'--'
+  },
+  {
+    key: '6',
+    name: 'Accenture',
+    Email: 'management@accenture.com',
+    Phone: '+91 8732654789',
+    cp: 'Drishti Sane',
+    facilitator:'--',
+    sites:'4',
+    Tenants:'--',
+    tg:'--'
+  },
+  {
+    key: '7',
+    name: 'Accenture',
+    Email: 'management@accenture.com',
+    Phone: '+91 8732654789',
+    cp: 'Drishti Sane',
+    facilitator:'--',
+    sites:'4',
+    Tenants:'--',
+    tg:'--'
+  },
+  {
+    key: '8',
+    name: 'Accenture',
+    Email: 'management@accenture.com',
+    Phone: '+91 8732654789',
+    cp: 'Drishti Sane',
+    facilitator:'--',
+    sites:'4',
+    Tenants:'--',
+    tg:'--'
+  },
+  {
+    key: '9',
+    name: 'Accenture',
+    Email: 'management@accenture.com',
+    Phone: '+91 8732654789',
+    cp: 'Drishti Sane',
+    facilitator:'--',
+    sites:'4',
+    Tenants:'--',
+    tg:'--'
+  },
+  {
+    key: '10',
+    name: 'Accenture',
+    Email: 'management@accenture.com',
+    Phone: '+91 8732654789',
+    cp: 'Drishti Sane',
+    facilitator:'--',
+    sites:'4',
+    Tenants:'--',
+    tg:'--'
+  },
+  {
+    key: '11',
+    name: 'Accenture',
+    Email: 'management@accenture.com',
+    Phone: '+91 8732654789',
+    cp: 'Drishti Sane',
+    facilitator:'--',
+    sites:'4',
+    Tenants:'--',
+    tg:'--'
+  },
+  {
+    key: '12',
+    name: 'Accenture',
+    Email: 'management@accenture.com',
+    Phone: '+91 8732654789',
+    cp: 'Drishti Sane',
+    facilitator:'--',
+    sites:'4',
+    Tenants:'--',
+    tg:'--'
+  },
+  {
+    key: '13',
+    name: 'Accenture',
+    Email: 'management@accenture.com',
+    Phone: '+91 8732654789',
+    cp: 'Drishti Sane',
+    facilitator:'--',
+    sites:'4',
+    Tenants:'--',
+    tg:'--'
   },
 ];
 const items = [
@@ -145,19 +267,19 @@ const App = () => (
 
           <div className='body'>
             <div className='header'>
-            <Search className='headersearch' placeholder="search modules" onSearch={onSearch} style={{ width: 250,}}/>
+            <Search className='headersearch' placeholder="search" onSearch={onSearch} style={{ width: 350,height:50}}/>
             <div className="dropdown">
             <Dropdown menu={{items,selectable: true, defaultSelectedKeys: ['3'],}} >
             <Typography.Link>
-            <Space> Columns
+            <Space className='columns'> Columns
             <DownOutlined />
             </Space>
             </Typography.Link>
             </Dropdown>
-            <button>hi</button>
+            <Button className='btn3'>View Client</Button>
             </div>
             </div>
-            <Table columns={columns} dataSource={data} />;
+            <Table columns={columns} dataSource={data} />
           </div>
           
 

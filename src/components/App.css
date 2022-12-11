@@ -38,9 +38,22 @@ text-transform: uppercase;
    border: none;
    font-size: 14px;
    font-weight: 600;
-   box-shadow: 0px 4px 16px rgba(3, 0, 55, 0.08);
+   box-shadow: 0px 4px 16px rgba(3, 0, 55, 0.08); 
 border-radius: 8px;
 
+}
+
+.btn3
+{
+    width: 100px;
+    height: 40px;
+    margin: 1rem;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;  
+    background-color: #E8EBF9;
+    color: #153AC7;
 }
 
 .btn1:hover
@@ -96,11 +109,26 @@ border-radius: 8px;
   }
 .dropdown
 {
-    border:1px solid red ;
     float: right;
+}
+.columns
+{
+    border: 1px solid #B8BABC;
+    width: 100px;
+    height: 40px;
+    padding-left: 0.8rem;
+    border-radius: 10px;
 }
 
 .file
 {
+    width: 100px;
+    height: 40px;
+    padding: 10px;
     flex: 50%;
+}
+
+.headersearch
+{
+    padding: 1rem;
 }
