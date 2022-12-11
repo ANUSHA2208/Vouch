@@ -1,0 +1,106 @@
+
+.layout .sider
+{
+    background-color: #fff;
+    height: 100vh;
+    box-shadow: 0px 1px 5px rgba(3, 0, 55, 0.08);
+
+}
+
+.sider h1{
+    font-size: 20px;
+    font-weight: 700;
+    padding-left: 0.5rem;
+}
+
+.search
+{
+ margin: auto;
+ display: flex;
+ border: 1px solid #E6E6E6;
+ border-radius: 24px;
+}
+
+.sider h3
+{
+    color: #B8BABC;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+text-transform: uppercase;
+    font-weight:800;
+    padding: 0.5rem 0 0 0.5rem;
+}
+
+.btn1,.btn2
+{
+    width: 180px;
+   margin: 5px 0 0 10px;
+   border: none;
+   font-size: 14px;
+   font-weight: 600;
+   box-shadow: 0px 4px 16px rgba(3, 0, 55, 0.08);
+border-radius: 8px;
+
+}
+
+.btn1:hover
+{
+    background-color: #153AC7;
+    color: #ffffff;
+}
+
+.btn2:hover
+{
+    background-color:#153AC7;
+    color: #ffffff;
+}
+
+.profile
+{
+    margin: 38rem 0 0 0.2rem;
+    border-top: 1px solid #B8BABC;
+}
+
+.col {
+    float: left;
+  }
+  
+  .left {
+    width: 25%;
+  }
+  
+  .right {
+    width: 75%;
+    font-size: 12px;
+    margin-top: 0.2rem;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .body
+  {
+    width: 95%;
+    height: auto;
+    background-color: #fff;
+    margin: 25px;
+    border-radius: 8px;
+  }
+
+  .importing
+  {
+    display: flex;
+  }
+.dropdown
+{
+    border:1px solid red ;
+    float: right;
+}
+
+.file
+{
+    flex: 50%;
+}
