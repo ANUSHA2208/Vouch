@@ -132,3 +132,11 @@ border-radius: 8px;
 {
     padding: 1rem;
 }
+
+:where(.css-dev-only-do-not-override-1i536d8).ant-pagination .ant-pagination-item-active{
+    background-color: #1677ff;
+}
+
+:where(.css-dev-only-do-not-override-1i536d8).ant-pagination .ant-pagination-item-active a{
+    color: #fff;
+}

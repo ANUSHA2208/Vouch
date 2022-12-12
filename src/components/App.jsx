@@ -1,80 +1,23 @@
-import React from 'react';
-import { UserOutlined } from '@ant-design/icons';
-import { Avatar } from 'antd';
+import React, { useRef, useState } from 'react';
+import { Button,Layout,Avatar,Breadcrumb, Input,Popover , Space, Table, Dropdown, Typography } from 'antd';
 import '../components/App.css'
-import { Layout} from 'antd';
-import { AudioOutlined } from '@ant-design/icons';
-import { Input} from 'antd';
-import { Button} from 'antd';
-import { Breadcrumb } from 'antd';
+import Highlighter from 'react-highlight-words';
+import { AudioOutlined,DownOutlined,UserOutlined,SearchOutlined,EyeOutlined,EditOutlined} from '@ant-design/icons';
 import {BsThreeDotsVertical} from 'react-icons/bs'
-import { DownOutlined } from '@ant-design/icons';
-import { Dropdown, Space, Typography } from 'antd';
-import { Table, Tag } from 'antd';
+import {BiBlock} from 'react-icons/bi'
+import {RiDeleteBinLine} from 'react-icons/ri'
+import '../components/App.css'
 
-const columns = [
-  {
-    title: 'Company Name',
-    dataIndex: 'name',
-    key: 'name',
-    render: (text) => <a>{text}</a>,
-  },
-  {
-    title: 'Email',
-    dataIndex: 'Email',
-    key: 'Email',
-  },
-  {
-    title: 'Phone No',
-    dataIndex: 'Phone',
-    key: 'phone',
-  },
 
-  {
-    title: 'Contact Person',
-    dataIndex: 'cp',
-    key: 'cp',
-  },
-  {
-    title: 'Facilitator',
-    dataIndex: 'facilitator',
-    key: 'facilitator',
-  },
-
-  {
-    title: 'Sites',
-    dataIndex: 'sites',
-    key: 'sites',
-  },
-
-  {
-    title: 'Tenants',
-    dataIndex: 'Tenants',
-    key: 'Tenants',
-  },
-  {
-    title: 'Tenant Grade',
-    dataIndex: 'tg',
-    key: 'tg',
-  },
-
-  {
-    title: 'Action',
-    dataIndex: '',
-    key: 'x',
-    render: () =>  <BsThreeDotsVertical/>
-  },
-
-];
 const data = [
   {
     key: '1',
     name: 'Infosys',
     Email: 'management@infosys.com',
     Phone: '+91 9563214587',
-    cp: 'Vijayent Roy',
+    CP: 'Vijayent Roy',
     facilitator:'--',
-    sites:'12',
+    sites:1,
     Tenants:'--',
     tg:'--'
   },
@@ -83,9 +26,9 @@ const data = [
     name: 'Wipro',
     Email: 'management@wipro.com',
     Phone: '+91 9834687423 ',
-    cp: 'Kalpit Soni',
+    CP: 'Kalpit Soni',
     facilitator:'--',
-    sites:'8',
+    sites:8,
     Tenants:'--',
     tg:'--'
   },
@@ -94,9 +37,9 @@ const data = [
     name: 'Accenture',
     Email: 'management@accenture.com',
     Phone: '+91 8732654789',
-    cp: 'Drishti Sane',
+    CP: 'Drishti Sane',
     facilitator:'--',
-    sites:'4',
+    sites:4,
     Tenants:'--',
     tg:'--'
   },
@@ -105,9 +48,9 @@ const data = [
     name: 'Accenture',
     Email: 'management@accenture.com',
     Phone: '+91 8732654789',
-    cp: 'Drishti Sane',
+    CP: 'Drishti Sane',
     facilitator:'--',
-    sites:'4',
+    sites:4,
     Tenants:'--',
     tg:'--'
   },
@@ -116,9 +59,9 @@ const data = [
     name: 'Accenture',
     Email: 'management@accenture.com',
     Phone: '+91 8732654789',
-    cp: 'Drishti Sane',
+    CP: 'Drishti Sane',
     facilitator:'--',
-    sites:'4',
+    sites:4,
     Tenants:'--',
     tg:'--'
   },
@@ -127,9 +70,9 @@ const data = [
     name: 'Accenture',
     Email: 'management@accenture.com',
     Phone: '+91 8732654789',
-    cp: 'Drishti Sane',
+    CP: 'Drishti Sane',
     facilitator:'--',
-    sites:'4',
+    sites:4,
     Tenants:'--',
     tg:'--'
   },
@@ -138,9 +81,9 @@ const data = [
     name: 'Accenture',
     Email: 'management@accenture.com',
     Phone: '+91 8732654789',
-    cp: 'Drishti Sane',
+    CP: 'Drishti Sane',
     facilitator:'--',
-    sites:'4',
+    sites:4,
     Tenants:'--',
     tg:'--'
   },
@@ -149,9 +92,9 @@ const data = [
     name: 'Accenture',
     Email: 'management@accenture.com',
     Phone: '+91 8732654789',
-    cp: 'Drishti Sane',
+    CP: 'Drishti Sane',
     facilitator:'--',
-    sites:'4',
+    sites:4,
     Tenants:'--',
     tg:'--'
   },
@@ -160,9 +103,9 @@ const data = [
     name: 'Accenture',
     Email: 'management@accenture.com',
     Phone: '+91 8732654789',
-    cp: 'Drishti Sane',
+    CP: 'Drishti Sane',
     facilitator:'--',
-    sites:'4',
+    sites:4,
     Tenants:'--',
     tg:'--'
   },
@@ -171,9 +114,9 @@ const data = [
     name: 'Accenture',
     Email: 'management@accenture.com',
     Phone: '+91 8732654789',
-    cp: 'Drishti Sane',
+    CP: 'Drishti Sane',
     facilitator:'--',
-    sites:'4',
+    sites:4,
     Tenants:'--',
     tg:'--'
   },
@@ -182,9 +125,9 @@ const data = [
     name: 'Accenture',
     Email: 'management@accenture.com',
     Phone: '+91 8732654789',
-    cp: 'Drishti Sane',
+    CP: 'Drishti Sane',
     facilitator:'--',
-    sites:'4',
+    sites:4,
     Tenants:'--',
     tg:'--'
   },
@@ -193,9 +136,9 @@ const data = [
     name: 'Accenture',
     Email: 'management@accenture.com',
     Phone: '+91 8732654789',
-    cp: 'Drishti Sane',
+    CP: 'Drishti Sane',
     facilitator:'--',
-    sites:'4',
+    sites:4,
     Tenants:'--',
     tg:'--'
   },
@@ -204,9 +147,9 @@ const data = [
     name: 'Accenture',
     Email: 'management@accenture.com',
     Phone: '+91 8732654789',
-    cp: 'Drishti Sane',
+    CP: 'Drishti Sane',
     facilitator:'--',
-    sites:'4',
+    sites:4,
     Tenants:'--',
     tg:'--'
   },
@@ -226,13 +169,188 @@ const items = [
   },
 ];
 
+const content = (
+
+  <div> 
+  <p style={{textTransform:"capitalize"}}><EyeOutlined /> view details </p>
+  <p style={{textTransform:"capitalize"}}><EditOutlined /> edit </p>
+  <p style={{textTransform:"capitalize"}}><BiBlock/> block access </p>
+  <p style={{textTransform:"capitalize"}}><RiDeleteBinLine /> delete </p>
+  </div>
+)
+
 const {Sider, Content } = Layout;
 const { Search } = Input;
 const suffix = (
   <AudioOutlined style={{fontSize: 16,color: '#1890ff', }}/>
 );
 const onSearch = (value) => console.log(value);
-const App = () => (
+const App = () => {
+  const [open,setOpen] = useState(false);
+
+  const handleOpenChange = (newOpen) => {
+    setOpen(newOpen);
+  };
+
+  const [searchText, setSearchText] = useState('');
+  const [searchedColumn, setSearchedColumn] = useState('');
+  const searchInput = useRef(null);
+  const handleSearch = (selectedKeys, confirm, dataIndex) => {
+    confirm();
+    setSearchText(selectedKeys[0]);
+    setSearchedColumn(dataIndex);
+  };
+  const handleReset = (clearFilters) => {
+    clearFilters();
+    setSearchText('');
+  };
+  const getColumnSearchProps = (dataIndex) => ({
+    filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
+      <div
+        style={{
+          padding: 8,
+        }}
+        onKeyDown={(e) => e.stopPropagation()}
+      >
+        <Input
+          ref={searchInput}
+          placeholder={`Search ${dataIndex}`}
+          value={selectedKeys[0]}
+          onChange={(e) => setSelectedKeys(e.target.value ? [e.target.value] : [])}
+          onPressEnter={() => handleSearch(selectedKeys, confirm, dataIndex)}
+          style={{
+            marginBottom: 8,
+            display: 'block',
+          }}
+        />
+        <Space>
+          <Button
+            type="primary"
+            onClick={() => handleSearch(selectedKeys, confirm, dataIndex)}
+            icon={<SearchOutlined />}
+            size="small"
+            style={{
+              width: 90,
+            }}
+          >
+            Search
+          </Button>
+          <Button
+            onClick={() => clearFilters && handleReset(clearFilters)}
+            size="small"
+            style={{
+              width: 90,
+            }}
+          >
+            Reset
+          </Button>
+        
+          
+        </Space>
+      </div>
+    ),
+    filterIcon: (filtered) => (
+      <SearchOutlined
+        style={{
+          color: filtered ? '#1890ff' : undefined,
+        }}
+      />
+    ),
+    onFilter: (value, record) =>
+      record[dataIndex].toString().toLowerCase().includes(value.toLowerCase()),
+    onFilterDropdownOpenChange: (visible) => {
+      if (visible) {
+        setTimeout(() => searchInput.current?.select(), 100);
+      }
+    },
+    render: (text) =>
+      searchedColumn === dataIndex ? (
+        <Highlighter
+          highlightStyle={{
+            backgroundColor: '#ffc069',
+            padding: 0,
+          }}
+          searchWords={[searchText]}
+          autoEscape
+          textToHighlight={text ? text.toString() : ''}
+        />
+      ) : (
+        text
+      ),
+  })
+
+  const columns = [
+    {
+      title: 'Company Name',
+      dataIndex: 'name',
+      key: '1',
+      render: (text) => <a>{text}</a>,
+      ...getColumnSearchProps('name'),
+      sorter:(a,b) => b.name.length - a.name.length,
+      sortDirections:['ascend','descend']
+    },
+    {
+      title: 'Email',
+      dataIndex: 'Email',
+      key: '2',
+      ...getColumnSearchProps('Email'),
+      sorter:(a,b) => b.Email.length - a.Email.length,
+      sortDirections:['ascend','descend']
+    },
+    {
+      title: 'Phone No',
+      dataIndex: 'Phone',
+      key: '3',
+      ...getColumnSearchProps('Phone'),
+      sorter:(a,b) => Number(a.Phone.replace(/\s+/g, '')) - Number(b.Phone.replace(/\s+/g, '')),
+      sortDirections:['ascend','descend']
+    },
+  
+    {
+      title: 'Contact Person',
+      dataIndex: 'CP',
+      key: '4',
+      ...getColumnSearchProps('CP'),
+      sorter:(a,b) => a.CP.localeCompare(b.CP),
+      sortDirections:['ascend','descend']
+    },
+    {
+      title: 'Facilitator',
+      dataIndex: 'facilitator',
+      key: '5',
+    },
+  
+    {
+      title: 'Sites',
+      dataIndex: 'sites',
+      key: '6',
+      sorter:(a,b) => a.sites - b.sites,
+      sortDirections:['ascend','descend']
+    },
+  
+    {
+      title: 'Tenants',
+      dataIndex: 'Tenants',
+      key: '7',
+    },
+    {
+      title: 'Tenant Grade',
+      dataIndex: 'tg',
+      key: '8',
+      sorter:(a,b) => b.tg - a.tg,
+      sortDirections:['ascend','descend']
+    },
+  
+    {
+      title: 'Action',
+      dataIndex: '',
+      key: '9',
+      render: () => <Popover  placement="leftTop" content={content} onOpenChange={handleOpenChange} trigger="click"> <BsThreeDotsVertical/> </Popover>
+    },
+  
+  ];
+  
+ return  (
   <>
     <Layout>
       <Layout className='layout'>
@@ -291,5 +409,5 @@ const App = () => (
 
 
   </>
-);
+)};
 export default App;
