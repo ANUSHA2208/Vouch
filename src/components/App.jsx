@@ -7,6 +7,7 @@ import {BsThreeDotsVertical} from 'react-icons/bs'
 import {BiBlock} from 'react-icons/bi'
 import {RiDeleteBinLine} from 'react-icons/ri'
 import '../components/App.css'
+import { Link } from 'react-router-dom'
 
 
 const data = [
@@ -359,7 +360,7 @@ const App = () => {
          <Search className='search' placeholder="search modules" onSearch={onSearch} style={{ width: 180,}}/>
          <h3>Client Master</h3>
          <Button className='btn1'>View Client</Button><br/>
-         <Button className='btn2'>Add Client</Button>
+         <Link to='/add-client'><Button className='btn2'>Add Client</Button></Link>
          <div className='profile'>
          <div className='row'>
          <div className='col left'>

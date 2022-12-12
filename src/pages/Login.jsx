@@ -6,8 +6,8 @@ import { FaRegUser } from 'react-icons/fa';
 import {RiLockPasswordLine} from 'react-icons/ri'
 import { Input } from 'antd';
 import { Space } from 'antd';
-import {box} from '../assets/Group 2.png';
-import { Link, useNavigate } from 'react-router-dom'
+import box from '../assets/Group 2.png';
+import { Link } from 'react-router-dom'
 
 
 
@@ -59,8 +59,10 @@ export const Login = () => {
  <div class="row">
   <div class="leftcolumn">
     <div class="card">
-        <h2 className='h2'>Welcome<br/><span className='txt'>Enter your Username and Password</span></h2>
-        
+    <div className='welcom'>
+        <h2 className='h2'>Welcome
+        <p className='txt'>Enter your Username and Password</p></h2>
+       </div> 
         <div className='form'>
           <div>
           <Input className='input' placeholder="Username" value={username} onChange = {handleUsername} type="text" prefix={<FaRegUser />} />
@@ -79,8 +81,9 @@ export const Login = () => {
         </div>
 
 
-        <div className='terms'>
-            <p className='terms-txt'>Terms of Use &nbsp; Privacy Policy <br/>© Punctualiti 2022. All rights reserved</p>
+        <div className='terms' >
+            <p style={{marginLeft:25}} className='terms-txt'>Terms of Use &nbsp; Privacy Policy</p>
+            <p className='terms-txt1' style={{marginLeft:22}}>© Punctualiti 2022. All rights reserved</p>
         </div>
 
      
@@ -89,7 +92,7 @@ export const Login = () => {
   <div class="rightcolumn">
      <div class="card-1">
      <div className='box'>
-     <img src='box'></img>
+     <img src={box}/>
         </div>
         <div className='desc'>
        <h2>360° Solution for Asset Management</h2>
