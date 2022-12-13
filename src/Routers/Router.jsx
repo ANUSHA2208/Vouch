@@ -4,6 +4,7 @@ import { Clientlist } from '../pages/Clientlist';
 import { Login } from '../pages/Login';
 import {AddClient} from '../pages/AddClient'
 import { SideNav } from '../components/SideNav';
+import {Payment} from '../components/Payment'
 
 const Router = () => {
   return (
@@ -17,6 +18,7 @@ const Router = () => {
                 <Route index  element={<Clientlist/>}/>
                 <Route path='client-list' element={<Clientlist/>}/>
                 <Route path='add-client' element={<AddClient/>}/>
+                <Route path='payment' element={<Payment/>}/>
                 </Route>
             </Routes>
     
