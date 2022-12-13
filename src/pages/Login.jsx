@@ -76,7 +76,7 @@ export const Login = () => {
 
         </div>  
         
-           <Link to='/client-list' ><button className="btn" onClick={hanbleApi}>Login</button></Link>
+           <Link to='/client' ><button className="btn" onClick={hanbleApi}>Login</button></Link>
            <p className='forget'>Forget password ?</p>
         </div>
 

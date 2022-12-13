@@ -1,14 +1,12 @@
 import React, { useRef, useState } from 'react';
-import { Button,Layout,Avatar,Breadcrumb, Input,Popover , Space, Table, Dropdown, Typography } from 'antd';
+import { Button,Layout,Breadcrumb, Input,Popover , Space, Table, Dropdown, Typography } from 'antd';
 import '../components/App.css'
 import Highlighter from 'react-highlight-words';
-import { AudioOutlined,DownOutlined,UserOutlined,SearchOutlined,EyeOutlined,EditOutlined} from '@ant-design/icons';
+import { AudioOutlined,DownOutlined,SearchOutlined,EyeOutlined,EditOutlined} from '@ant-design/icons';
 import {BsThreeDotsVertical} from 'react-icons/bs'
 import {BiBlock} from 'react-icons/bi'
 import {RiDeleteBinLine} from 'react-icons/ri'
 import '../components/App.css'
-import { Link } from 'react-router-dom'
-
 
 const data = [
   {
@@ -353,8 +351,7 @@ const App = () => {
   
  return  (
   <>
-    <Layout>
-      <Layout className='layout'>
+    {/* <Layout className='layout'>
         <Sider className='sider'>
          <h1>Company Name</h1>
          <Search className='search' placeholder="search modules" onSearch={onSearch} style={{ width: 180,}}/>
@@ -371,7 +368,7 @@ const App = () => {
          </div>
          </div>
          </div>
-        </Sider>
+        </Sider> */}
 
 
         <Content className='content'>
@@ -404,9 +401,7 @@ const App = () => {
 
           
         </Content>
-
-      </Layout>
-    </Layout>
+  {/* </Layout> */}
 
 
   </>

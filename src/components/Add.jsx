@@ -1,33 +1,46 @@
-import React from 'react';
+import React, { useMemo, useEffect, useState } from 'react';
 import { UserOutlined } from '@ant-design/icons';
 import { Avatar } from 'antd';
 import '../components/Add.css'
-import { Layout} from 'antd';
+import { Layout, message } from 'antd';
 import { AudioOutlined } from '@ant-design/icons';
-import { Input} from 'antd';
-import { Button} from 'antd';
+import { Input } from 'antd';
+import { Button } from 'antd';
 import { Breadcrumb } from 'antd';
 import { Link } from 'react-router-dom'
 import { Tabs } from 'antd';
 import { Profile } from './Profile';
+import { Steps } from 'antd';
 
-
-
-const onChange = (key) => {
-  console.log(key);
-};
-
-const {Sider, Content } = Layout;
-const { Search } = Input;
 const suffix = (
-  <AudioOutlined style={{fontSize: 16,color: '#1890ff', }}/>
+  <AudioOutlined style={{ fontSize: 16, color: '#1890ff', }} />
 );
-const onSearch = (value) => console.log(value);
 
-const Add = () => (
-  <>
-    <Layout>
-      <Layout className='layout'>
+
+const Add = () => {
+
+ 
+
+  const steps = useMemo(() => [
+    {
+      title: 'First',
+      content: 'First-content',
+    },
+    {
+      title: 'Second',
+      content: 'Second-content',
+    },
+    {
+      title: 'Last',
+      content: 'Last-content',
+    },
+  ],[]);
+
+  // return(
+
+
+  {/* <Layout> */ }
+  {/* <Layout className='layout'>
         <Sider className='sider'>
          <h1>Company Name</h1>
          <Search className='search' placeholder="search modules" onSearch={onSearch} style={{ width: 180,}}/>
@@ -44,10 +57,10 @@ const Add = () => (
          </div>
          </div>
          </div>
-        </Sider>
+        </Sider> */}
 
 
-        <Content className='content'>
+  {/* <Content className='content'>
           <h1 style={{fontSize:24,marginLeft:25,color:' #030037'}}>Add Client
           <Breadcrumb>
           <Breadcrumb.Item>Client Master</Breadcrumb.Item>
@@ -72,21 +85,6 @@ const Add = () => (
         <p style={{paddingTop:0,marginTop:0,fontSize:14}}>Add some basic information related to the client</p>
         <Profile/>
         </div>
-    
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-
 ,
       },
       {
@@ -113,11 +111,89 @@ const Add = () => (
           
         </Content>
 
-      </Layout>
-    </Layout>
+      </Layout> */}
+  {/* </Layout> */ }
 
 
-  </>
-);
+  // );
+
+  const [current, setCurrent] = useState(0);
+  
+
+  const onChange = (value) => {
+    console.log('onChange:', value);
+    setCurrent(value);
+  };
+  const next = () => {
+    items[current+1].disabled = false;
+    setCurrent(current => current + 1);
+  };
+  const prev = () => {
+    setCurrent(current - 1);
+  };
+  const items = useMemo(() => steps.map((item, index) => {
+
+    if (index === 0) {
+      return {
+        key: item.title,
+        title: item.title,
+        disabled: false,
+      }
+    }
+    else {
+      return {
+        key: item.title,
+        title: item.title,
+        disabled: true,
+      }
+    }
+
+  }),[]) ;
+
+   console.log(items)
+
+   useEffect(() =>{
+    return () => {
+      console.log("add client unmounted");
+      items.map((item,index) => {
+        if(index === 0)
+        {return item}
+
+       return item.disabled = true
+      })
+    }
+   },[])
+
+  return (
+    <>
+      <Steps size='small' current={current} items={items}
+        onChange={onChange} className="site-navigation-steps" type="navigation" />
+      <div className="steps-content">{steps[current].content}</div>
+      <div className="steps-action">
+        {current < steps.length - 1 && (
+          <Button type="primary" onClick={() => next()}>
+            Next
+          </Button>
+        )}
+        {current === steps.length - 1 && (
+          <Button type="primary" onClick={() => message.success('Processing complete!')}>
+            Done
+          </Button>
+        )}
+        {current > 0 && (
+          <Button
+            style={{
+              margin: '0 8px',
+            }}
+            onClick={() => prev()}
+          >
+            Previous
+          </Button>
+        )}
+      </div>
+    </>
+  )
+
+}
 
 export default Add;
