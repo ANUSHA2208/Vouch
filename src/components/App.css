@@ -76,11 +76,11 @@ border-radius: 8px;
   }
   
   .left {
-    width: 25%;
+    width: 30%;
   }
   
   .right {
-    width: 75%;
+    width: 70%;
     font-size: 12px;
     margin-top: 0.2rem;
   }
@@ -91,14 +91,20 @@ border-radius: 8px;
     clear: both;
   }
 
+  .content
+  {
+    width: 80%;
+  }
+
   .body
   {
-    width: 95%;
-    height: auto;
+    width: 100%;
+    height: 100vh;
     background-color: #fff;
     margin: 25px;
     border-radius: 8px;
   }
+
 
   .importing
   {
@@ -125,6 +131,8 @@ border-radius: 8px;
     flex: 50%;
 }
 
+
+
 .headersearch
 {
     padding: 1rem;
@@ -136,4 +144,10 @@ border-radius: 8px;
 
 :where(.css-dev-only-do-not-override-1i536d8).ant-pagination .ant-pagination-item-active a{
     color: #fff;
+}
+
+
+:where(.ant-layout-content).content
+{
+    width: 85%;
 }

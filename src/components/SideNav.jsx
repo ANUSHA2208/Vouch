@@ -9,7 +9,7 @@ export const SideNav = () => {
   const {Sider} = Layout;
   return (
     <div style={{display:"flex"}}>
-    <Layout className='layout' >
+    <Layout className='layout' style={{flexGrow:0.1}} >
     <Sider className='sider'>
      <h1>Company Name</h1>
      <Search className='search' placeholder="search modules" />

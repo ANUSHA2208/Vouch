@@ -1,25 +1,89 @@
-.form-left {
-    float: left;
-    width: 50%;
-    padding: 10px;
-    height: 300px; 
-  }
+.column1 {
+  float: left;
+  width: 50%;
 
-  .profile-form:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+}
+
+.row1:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
 
-  .col1 {
-    float: left;
-    width: 60%;
+.column {
+  float: left;
+  padding: 10px;
+}
+
+.left {
+  width: 60%;
+}
+
+.right {
+  width: 40%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.Input
+{
+  width: 800px;
+  margin-left: 2rem;
+  display: inline-block;
+  align-items: stretch;
+}
+
+.Input1
+{
+  margin-left: 5px;
+  width: 265px;
+}
+
+
+@media only screen and (max-width: 1840px) and (min-width:600px)
+{
+  
+  .column1
+  {
+    flex-direction: column;
+    align-items: stretch;
   }
   
-
-  .row1:after {
-    content: "";
-    display: table;
-    clear: both;
+  .column1  {
+    margin: 5px 10px 5px 0;
   }
+  
+}
+
+.basic
+{
+  width: 93%;
+  margin-left: 32px;
+}
+
+
+.column1 {  
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+
+
+.save
+{
+  float: right;
+  display: flex;
+}
+
+.label 
+{
+    line-height: 0.4;
+    padding: 25px;
+}
+
