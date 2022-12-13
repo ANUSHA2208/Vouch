@@ -24,7 +24,7 @@ const Add = () => {
   const steps = useMemo(() => [
     {
       title: 'First',
-      content: 'First-content',
+      content:  <p>hello world</p>,
     },
     {
       title: 'Second',
