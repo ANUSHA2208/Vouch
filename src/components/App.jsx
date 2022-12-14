@@ -18,7 +18,8 @@ const data = [
     facilitator:'--',
     sites:1,
     Tenants:'--',
-    tg:'--'
+    tg:'--',
+    image:require('../assets/Infosys.svg').default,
   },
   {
     key: '2',
@@ -29,7 +30,8 @@ const data = [
     facilitator:'--',
     sites:8,
     Tenants:'--',
-    tg:'--'
+    tg:'--',
+    image:require('../assets/Wipro.svg').default
   },
   {
     key: '3',
@@ -40,7 +42,8 @@ const data = [
     facilitator:'--',
     sites:4,
     Tenants:'--',
-    tg:'--'
+    tg:'--',
+    image:require('../assets/Accenture.svg').default,
   },
   {
     key: '4',
@@ -51,7 +54,8 @@ const data = [
     facilitator:'--',
     sites:4,
     Tenants:'--',
-    tg:'--'
+    tg:'--',
+    image:require('../assets/Accenture.svg').default,
   },
   {
     key: '5',
@@ -62,7 +66,8 @@ const data = [
     facilitator:'--',
     sites:4,
     Tenants:'--',
-    tg:'--'
+    tg:'--',
+    image:require('../assets/Accenture.svg').default,
   },
   {
     key: '6',
@@ -73,7 +78,8 @@ const data = [
     facilitator:'--',
     sites:4,
     Tenants:'--',
-    tg:'--'
+    tg:'--',
+    image:require('../assets/Accenture.svg').default,
   },
   {
     key: '7',
@@ -84,7 +90,8 @@ const data = [
     facilitator:'--',
     sites:4,
     Tenants:'--',
-    tg:'--'
+    tg:'--',
+    image:require('../assets/Accenture.svg').default,
   },
   {
     key: '8',
@@ -95,7 +102,8 @@ const data = [
     facilitator:'--',
     sites:4,
     Tenants:'--',
-    tg:'--'
+    tg:'--',
+    image:require('../assets/Accenture.svg').default,
   },
   {
     key: '9',
@@ -106,7 +114,8 @@ const data = [
     facilitator:'--',
     sites:4,
     Tenants:'--',
-    tg:'--'
+    tg:'--',
+    image:require('../assets/Accenture.svg').default,
   },
   {
     key: '10',
@@ -117,7 +126,8 @@ const data = [
     facilitator:'--',
     sites:4,
     Tenants:'--',
-    tg:'--'
+    tg:'--',
+    image:require('../assets/Accenture.svg').default,
   },
   {
     key: '11',
@@ -128,7 +138,8 @@ const data = [
     facilitator:'--',
     sites:4,
     Tenants:'--',
-    tg:'--'
+    tg:'--',
+    image:require('../assets/Accenture.svg').default,
   },
   {
     key: '12',
@@ -139,7 +150,8 @@ const data = [
     facilitator:'--',
     sites:4,
     Tenants:'--',
-    tg:'--'
+    tg:'--',
+    image:require('../assets/Accenture.svg').default,
   },
   {
     key: '13',
@@ -150,7 +162,8 @@ const data = [
     facilitator:'--',
     sites:4,
     Tenants:'--',
-    tg:'--'
+    tg:'--',
+    image:require('../assets/Accenture.svg').default,
   },
 ];
 const items = [
@@ -177,6 +190,8 @@ const content = (
   <p style={{textTransform:"capitalize"}}><RiDeleteBinLine /> delete </p>
   </div>
 )
+
+
 
 const {Sider, Content } = Layout;
 const { Search } = Input;
@@ -278,15 +293,18 @@ const App = () => {
       ),
   })
 
+  
+
   const columns = [
     {
       title: 'Company Name',
       dataIndex: 'name',
       key: '1',
-      render: (text) => <a>{text}</a>,
+      
       ...getColumnSearchProps('name'),
       sorter:(a,b) => b.name.length - a.name.length,
-      sortDirections:['ascend','descend']
+      sortDirections:['ascend','descend'],
+      render:(text,record) => <div style={{display:"Flex",alignItems:"center",gap:"0.5rem"}}><img src={record.image}/>{text}</div>
     },
     {
       title: 'Email',
@@ -357,8 +375,8 @@ const App = () => {
           <h1 style={{fontSize:24,marginLeft:25,color:' #030037'}}>View Client
           <Breadcrumb>
           <Breadcrumb.Item>Client Master</Breadcrumb.Item>
-          <Breadcrumb.Item>
-          <a href="" style={{color:'#B8BABC'}}>View Client</a>
+          <Breadcrumb.Item style={{color:'#B8BABC'}}>
+          View Client
           </Breadcrumb.Item>
           </Breadcrumb>
           </h1>

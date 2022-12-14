@@ -2,7 +2,7 @@ import React, { useMemo, useEffect, useState } from 'react';
 import '../components/Add.css'
 import { AudioOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { Profile } from './Profile';
 import { Steps,Breadcrumb,message } from 'antd';
 import Payment from './Payment';
@@ -20,19 +20,15 @@ const Add = () => {
 
   const steps = useMemo(() => [
     {
-      title: 'First',
-<<<<<<< HEAD
-      content:  <p>hello world</p>,
-=======
+      title: 'Create Profile',
       content:<Profile/>,
->>>>>>> c96060b56926f09670398497d4521f9897b20408
     },
     {
-      title: 'Second',
+      title: 'Payment Setup',
       content: <Payment/>,
     },
     {
-      title: 'Last',
+      title: 'Theme Setup',
       content: 'Last-content',
     },
   ],[]);
@@ -40,14 +36,7 @@ const Add = () => {
 
   const [current, setCurrent] = useState(0);
   
-  <h1 style={{fontSize:24,marginLeft:25,color:' #030037'}}>View Client
-          <Breadcrumb>
-          <Breadcrumb.Item>Client Master</Breadcrumb.Item>
-          <Breadcrumb.Item>
-          <a href="" style={{color:'#B8BABC'}}>View Client</a>
-          </Breadcrumb.Item>
-          </Breadcrumb>
-          </h1>
+  
   const onChange = (value) => {
     console.log('onChange:', value);
     setCurrent(value);
@@ -92,6 +81,10 @@ const Add = () => {
     }
    },[])
 
+   const activeStyle ={color:'#B8BABC'};
+
+   
+
   return (
     <>
     <div style={{float:'left'}}>
@@ -101,7 +94,7 @@ const Add = () => {
           <Breadcrumb.Item>Client Master</Breadcrumb.Item>
           <Breadcrumb.Item>Add Client</Breadcrumb.Item>
           <Breadcrumb.Item>
-          <a href="" style={{color:'#B8BABC'}}> Create Profile</a>
+          <NavLink to="/" activeStyle={activeStyle}>{items[current].title}</NavLink>
           </Breadcrumb.Item>
           </Breadcrumb>
           </h1>

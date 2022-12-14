@@ -17,7 +17,7 @@ const Router = () => {
                   
                 <Route index  element={<Clientlist/>}/>
                 <Route path='client-list' element={<Clientlist/>}/>
-                <Route path='add-client' element={<AddClient/>}/>
+                <Route path='add-client/create-profile' element={<AddClient/>}/>
                 <Route path='payment' element={<Payment/>}/>
                 </Route>
             </Routes>

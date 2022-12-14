@@ -55,7 +55,7 @@ export const Profile = () => {
           },
         ]}
       >
-        <Select className='select' style={{width:750,marginLeft:32}} placeholder="Select Business Category" allowClear>
+        <Select className='select' style={{width:750,marginLeft:32}} placeholder="Select Business Category" >
           <Option value="1">xyx</Option>
           <Option value="2">xyz</Option>
         </Select>
@@ -83,7 +83,7 @@ export const Profile = () => {
       >
         <Select className='select' style={{width:750,marginLeft:32}}
           placeholder="Select State"
-          allowClear
+          
         >
           <Option value="1">xyx</Option>
           <Option value="2">xyz</Option>
@@ -125,7 +125,7 @@ export const Profile = () => {
       >
         <Select className='select' style={{width:750,marginLeft:32}}
           placeholder="Select Facility Management Company"
-          allowClear
+          
         >
           <Option value="1">xyx</Option>
           <Option value="2">xyz</Option>
@@ -154,7 +154,7 @@ export const Profile = () => {
       >
         <Select className='select' style={{width:500,marginLeft:32}}
           placeholder="Select City"
-          allowClear
+          
         >
           <Option value="1">xyx</Option>
           <Option value="2">xyz</Option>

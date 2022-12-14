@@ -14,8 +14,8 @@ export const SideNav = () => {
      <h1>Company Name</h1>
      <Search className='search' placeholder="search modules" />
      <h3>Client Master</h3>
-     <Button className='btn1'>View Client</Button><br/>
-     <NavLink to='add-client'><Button className='btn2'>Add Client</Button></NavLink>
+     <NavLink to="client-list"><Button className='btn1'>View Client</Button></NavLink><br/>
+     <NavLink to='add-client/create-profile'><Button className='btn2'>Add Client</Button></NavLink>
      <div className='profile'>
      <div className='row'>
      <div className='col left'>
